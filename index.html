@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta charset="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+
+    <!-- Custom CSS page for minor changes -->
+    <link rel="stylesheet" href="style.css">
+
+    <title>PAAY's Assessment</title>
+</head>
+<body>
+
+    <!-- NAVBAR SECTION -->
+  <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3">
+    <div class="container">
+      <a href="#" class="navbar-brand px-5">PAAY Assignment</a>
+
+      <button 
+        class="navbar-toggler" 
+        type="button" 
+        data-bs-toggle="collapse" 
+        data-bs-target="#navmenu"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navmenu">
+        <ul class="navbar-nav"> 
+          <li class="nav-item">
+            <a href="#home" class="nav-link" id="homeactive">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="#about" class="nav-link">About</a>
+          </li>
+          <li class="nav-item">
+            <a href="#contact" class="nav-link">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- BILLING FORM -->
+
+  <div class="col-xs-12">
+      <h3>BILLING FORM</h3>
+      <form id="billing-form">
+          <input type="hidden" name="x_transaction_id" value="1234" data-threeds="id" />
+          <input type="hidden" name="total" value="100.00" data-threeds="amount">
+          <p>
+              <label>First Name</label>
+              <input type="text" name="first_name" value="PAAY">  
+          </p>
+          <p>
+            <label>Last Name</label>
+            <input type="text" name="last_name" value="Assignment">  
+          </p>
+          <p>
+            <label>Card Number</label>
+            <input type="text" name="x_card_num" data-threeds="pan" />  
+          </p>
+          <p>
+            <label>Card Expiration Month</label>
+            <input type="text"
+            id="exp"
+            data-threeds="month"
+            name="x_exp_month" />  
+          </p>
+          <p>
+            <label>Card Expiration Year</label>
+            <input type="text"
+            id="exp"
+            data-threeds="year"
+            name="x_exp_year" />  
+          </p>
+          <button>SUBMIT</button>
+      </form>
+  </div>
+
+
+  <!-- FOOTER -->
+
+<footer class="py-4 bg-dark text-white text-center foot">
+    <div class="copyright">
+      <p class="lead">Aladin's Paay Assignment</p>
+    </div>
+</footer>
+
+
+<!-- 3DS SDK -->
+  <script src="https://cdn.3dsintegrator.com/threeds.2.min.latest.js"></script>
+  <script>
+    var tds = new ThreeDS(
+      "billing-form",
+      "6eb24fa9983603ac0161ee29e36e0e1a",
+      null,
+      {
+        endpoint:"https://api-sandbox.3dsintegrator.com/v2",
+        verbose:true
+      });
+  </script>
+
+</body>
+</html>

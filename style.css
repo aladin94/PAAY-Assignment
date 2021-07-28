@@ -1,0 +1,18 @@
+/* Custom Styles page to reflect provided Example page */
+
+
+#homeactive {
+    background-color: black;
+}
+
+.col-xs-12 {
+    margin: 20px;
+}
+
+.container {
+    margin-left: 3px;
+}
+
+.foot {
+    margin-top: 17em;
+}
